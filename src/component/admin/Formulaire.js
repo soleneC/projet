@@ -7,7 +7,7 @@ class Formulaire extends Component {
     return (
       <Form>
         <FormGroup row>
-          <Label for="surname" sm={2} class = "label">Nom</Label>
+          <Label for="surname" sm={2}>Nom</Label>
           <Col sm={10}>
             <Input type="text" name="surname" id="surname" placeholder="Nom" />
           </Col>
