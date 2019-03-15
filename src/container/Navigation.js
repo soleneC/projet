@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container,
   Collapse,
@@ -7,12 +8,11 @@ import { Container,
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink, 
-  Row, 
+  Row,
   Col} from 'reactstrap';
-  import './Header.css';
+  import './Navigation.css';
 
-class Header extends Component {
+class Navigation extends Component {
   constructor(props) {
    super(props);
    this.toggle = this.toggle.bind(this);
@@ -25,24 +25,21 @@ class Header extends Component {
       isOpen: !this.state.isOpen
     });
   }
-   
-  
-
 
   render() {
     return (
       <header class="barre">
-     <div>
-       <Navbar  light expand="md">
+      <div>
+       <Navbar light expand="md">
           <NavbarBrand style={{color: '#919DC4'}} href="/">My Dashboard</NavbarBrand>
           <NavbarToggler  onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink style={{color: '#919DC4'}} href="/components/">Home</NavLink>
+                <NavLink style={{color: '#919DC4'}} to="/">Widgets</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink style={{color: '#919DC4'}} href="/">Page administrative</NavLink>
+                <NavLink style={{color: '#919DC4'}} to="/admin">Page Admin</NavLink>
               </NavItem>
               </Nav>
           </Collapse>
@@ -53,4 +50,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default Navigation;

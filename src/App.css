@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #292d39 !important;
 }
 
 .App-logo {
@@ -34,7 +35,7 @@
 
 .saut{
   padding-top: 50px;
-  
+
 
 }
 
