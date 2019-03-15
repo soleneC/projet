@@ -15,7 +15,7 @@ constructor(props) {
             },*/
 
             theme: {
-            palette: 'palette10', 
+            palette: 'palette10',
            monochrome: {
             enabled: false,
              color: '#A300D6',
@@ -26,8 +26,8 @@ constructor(props) {
 
             legend:{
             	position:'bottom',
-            	
-            	
+
+
 
             	labels: {
                 colors: '#919DC4',
@@ -38,7 +38,7 @@ constructor(props) {
             title: {
                text: 'widget numéro 4',
                align: 'center',
-               
+
                floating: false,
               style: {
                fontSize:  '16px',
@@ -61,10 +61,10 @@ constructor(props) {
                   position: 'bottom'
                 },
 
-                
 
-             
-                
+
+
+
 
 
               }
@@ -79,12 +79,12 @@ constructor(props) {
 
       render() {
         return (
-          
+
 
           <div id="chart">
             <Chart options={this.state.options} series={this.state.series} type="donut" height="300" />
           </div>
-      
+
     );
   }
 }
