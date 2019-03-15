@@ -13,66 +13,44 @@ import './WidgetGrid.css';
 export default class WidgetGrid extends Component {
   render() {
     return (
-    	
     	<Row>
-    	<Col xs="6">
+      	<Col xs="12" sm="6">
+        	<div class="w">
+        	 <Widget1/>
+        	</div>
+      	</Col>
 
-    	<div class="w">
-    	<Widget1/>
-    	</div>
+      	<Col xs="12" sm="6">
+        	<div class="w">
+        	 <Widget2/>
+        	</div>
+      	</Col>
 
-    	</Col>
-         
-         <Col xs="1"></Col>
+        <Col xs="12">
+        	<div class="w">
+        	 <Widget3/>
+          </div>
+      	</Col>
 
-    	<Col xs="4">
-    	<div class="w">
-    	<Widget2/>
-    	</div>
-    	</Col>
-    	
-       <Col xs="12">
+      	<Col xs="12" sm="4">
+        	<div class="w">
+        	 <Widget4/>
+          </div>
+      	</Col>
 
-    	<div class="w">
-    	<Widget3/>
-        </div>
+      	<Col xs="12" sm="4">
+        	<div class="w">
+        	 <Widget5/>
+          </div>
+      	</Col>
 
-    	</Col>
-        
-    	<Col xs="3">
+      	<Col xs="12" sm="4">
+      	 <div class="w">
+      	   <Widget6/>
+          </div>
+      	</Col>
 
-    	<div class="w">
-    	<Widget4/>
-        </div>
-
-    	</Col>
-        <Col xs="1"></Col>
-    	<Col xs="4">
-
-    	<div class="w">
-    	<Widget5/>
-        </div>
-
-    	</Col>
-
-    	<Col xs="1"></Col>
-    	<Col xs="3">
-
-    	<div class="w">
-    	<Widget6/>
-        </div>
-
-    	</Col>
-    
-    	</Row>
-
-    
-
-    	
-    	
-    	
-
-    	
-    	);
+      </Row>
+    );
   }
 }

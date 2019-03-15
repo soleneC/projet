@@ -13,15 +13,12 @@ export default class Widget1 extends Component {
 
         this.state = {
           options: {
-            
+
             plotOptions: {
               bar: {
                 horizontal: true,
-
-
               }
             },
-            
 
             fill:{
               colors:['#3F73CB']
@@ -41,14 +38,14 @@ export default class Widget1 extends Component {
              },
 
             dataLabels: {
-               
+
               enabled: false,
               colors:'#919DC4'
 
 
             },
             xaxis: {
-               
+
               categories: ['Australia', 'Canada', 'United Kingdom', 'Netherlands', 'Italy', 'France', 'Japan',
                 'United States', 'China', 'Germany'
               ],
@@ -56,12 +53,12 @@ export default class Widget1 extends Component {
 
               labels: {
             show: true,
-            
-           
+
+
             style: {
                 colors: '#919DC4',
                 fontSize: '12px',
-                
+
             },
           },
             },
@@ -70,31 +67,21 @@ export default class Widget1 extends Component {
                 style: {
                 colors: ['#919DC4', '#919DC4','#919DC4','#919DC4','#919DC4','#919DC4','#919DC4','#919DC4','#919DC4','#919DC4'],
                 fontSize: '12px',
-                
             },
-
               },
           },
         },
 
-        
-
-
-
-          series: 
+          series:
           [{
-            
             data: [200, 300, 450, 500, 550, 600, 700, 1100, 1200, 1380]
-            
-             
           }],
-
         }
       }
 
       render() {
         return (
-          
+
 
           <div id="chart">
             <Chart options={this.state.options} series={this.state.series} type="bar" height="350" />

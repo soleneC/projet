@@ -6,7 +6,7 @@ import './Widget.css';
 //https://apexcharts.com/react-chart-demos/line-charts/gradient/
 export default class Widget3 extends Component {
 
-       constructor(props) {
+      constructor(props) {
       super(props);
 
       this.state = {
@@ -36,12 +36,12 @@ export default class Widget3 extends Component {
 
             labels: {
             show: true,
-            
-           
+
+
             style: {
                 colors: '#919DC4',
                 fontSize: '12px',
-                
+
             },
           },
           },
@@ -74,7 +74,7 @@ export default class Widget3 extends Component {
             colors: ["#3F9EF9"],
             strokeColor: "#fff",
             strokeWidth: 2,
-             
+
             hover: {
               size: 7,
             }
@@ -90,7 +90,7 @@ export default class Widget3 extends Component {
               style: {
             color: '#3F9EF9',
             fontSize: '12px',
-           
+
         },
             },
 
@@ -106,7 +106,7 @@ export default class Widget3 extends Component {
         },
     },
 
-             
+
 
           }
         },
@@ -123,7 +123,7 @@ export default class Widget3 extends Component {
     render() {
 
       return (
-        
+
 
           <div id="chart">
             <Chart options={this.state.options} series={this.state.series} type="line" height="350" />

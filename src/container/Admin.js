@@ -5,7 +5,7 @@ import Formulaire from '../component/admin/Formulaire';
 class Admin extends Component {
   render() {
     return (
-        <row>
+        <row class = "formulaire">
           <div><Formulaire /></div>
         </row>
 
