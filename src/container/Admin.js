@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
+import Formulaire from '../component/admin/Formulaire';
 
 class Admin extends Component {
   render() {
     return (
-      <h1>Admin</h1>
+      <container class = "formulaire">
+        <row>
+          <div><Formulaire /></div>
+        </row>
+      </container>
     );
   }
 }
