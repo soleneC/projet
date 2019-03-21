@@ -25,7 +25,7 @@ export default class Widget1 extends Component {
             },
 
             title: {
-               text: 'widget numéro 1',
+               text: 'Nombre total de likes par artiste',
                align: 'center',
                margin: 10,
                offsetX: 0,

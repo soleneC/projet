@@ -36,7 +36,7 @@ constructor(props) {
             },
 
             title: {
-               text: 'widget numéro 4',
+               text: 'Nombre de followers',
                align: 'center',
 
                floating: false,

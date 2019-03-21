@@ -21,7 +21,7 @@ constructor(props) {
             },
 
             title:{
-              text: 'widget numéro 5',
+              text: 'Nombre découtes de chansons',
                align: 'center',
                style: {
             fontSize:  '16px',
@@ -30,7 +30,7 @@ constructor(props) {
         },
             },
 
-            labels: ['Rock', 'Pop', 'Jazz', 'Classique'],
+            labels: ['chanson1', 'chanson2', 'chanson3', 'chanson4'],
             stroke: {
     lineCap: "round"
   },
