@@ -8,6 +8,12 @@ mongoose.connect('mongodb://localhost:27017/DB');
 var db = mongoose.connection;
 
 
+db.on('error', console.error.bind(console, 'Erreur lors de la connexion')); 
+db.once('open', function (){
+    console.log("Connexion à la base OK"); 
+}); 
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var artistsRouter = require('./routes/artists');
