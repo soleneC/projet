@@ -2,6 +2,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost:27017/DB');
+var db = mongoose.connection;
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -11,6 +16,35 @@ var tracksRouter = require('./routes/tracks');
 
 var app = express();
 
+const Artiste = new mongoose.Schema({
+     name : String,
+     dateOfBirth : Date,
+     followers : Number,
+     albums:{
+     	type:mongoose.Schema.Types.ObjectId,
+     	ref:'Album'
+     }
+	});
+
+const Album = new mongoose.Schema({
+     title : String,
+     genre :{type: String,enum: ['rap','rock','jazz','pop']},
+     tracks:{
+     	type:mongoose.Schema.Types.ObjectId,
+     	ref:'Track'
+     }
+	});
+
+const Track = new mongoose.Schema({
+     title : String,
+     duration : Number,
+     listenning : Number,
+     like : Number,
+     artist:{
+     	type:mongoose.Schema.Types.ObjectId,
+     	ref:'Artist'
+     }
+	});
 
 app.use(logger('dev'));
 app.use(express.json());
