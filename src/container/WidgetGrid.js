@@ -15,37 +15,37 @@ export default class WidgetGrid extends Component {
     return (
     	<Row>
       	<Col xs="12" sm="6">
-        	<div class="w">
+        	<div className="w">
         	 <Widget1/>
         	</div>
       	</Col>
 
       	<Col xs="12" sm="6">
-        	<div class="w">
+        	<div className="w">
         	 <Widget2/>
         	</div>
       	</Col>
 
         <Col xs="12">
-        	<div class="w">
+        	<div className="w">
         	 <Widget3/>
           </div>
       	</Col>
 
       	<Col xs="12" sm="4">
-        	<div class="w">
+        	<div className="w">
         	 <Widget4/>
           </div>
       	</Col>
 
       	<Col xs="12" sm="4">
-        	<div class="w">
+        	<div className="w">
         	 <Widget5/>
           </div>
       	</Col>
 
       	<Col xs="12" sm="4">
-      	 <div class="w">
+      	 <div className="w">
       	   <Widget6/>
           </div>
       	</Col>
