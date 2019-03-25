@@ -22,35 +22,7 @@ var tracksRouter = require('./routes/tracks');
 
 var app = express();
 
-const Artiste = new mongoose.Schema({
-     name : String,
-     dateOfBirth : Date,
-     followers : Number,
-     albums:{
-     	type:mongoose.Schema.Types.ObjectId,
-     	ref:'Album'
-     }
-	});
 
-const Album = new mongoose.Schema({
-     title : String,
-     genre :{type: String,enum: ['rap','rock','jazz','pop']},
-     tracks:{
-     	type:mongoose.Schema.Types.ObjectId,
-     	ref:'Track'
-     }
-	});
-
-const Track = new mongoose.Schema({
-     title : String,
-     duration : Number,
-     listenning : Number,
-     like : Number,
-     artist:{
-     	type:mongoose.Schema.Types.ObjectId,
-     	ref:'Artist'
-     }
-	});
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -61,10 +33,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/artists', artistsRouter);
-app.use('/albums', albumsRouter);
-app.use('/tracks', tracksRouter);
+//app.use('/albums', albumsRouter);
+//app.use('/tracks', tracksRouter);
 
-const PORT = process.env.PORT ||8000;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, function() {
    console.log('Listening at http:localhost:${PORT}/');
 });
