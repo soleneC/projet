@@ -34,7 +34,7 @@ router.get('/:id', (req, res) => {
         });
       }
       return res.status(500).send({
-        message: 'Error retrieving user with id ' + req.params.id
+        message: 'Error retrieving artist with id ' + req.params.id
       });
     });
 });
@@ -43,7 +43,7 @@ router.get('/:id', (req, res) => {
 router.put('/', (req, res) => {
   // Validate request
   if (!req.body.name) {
-    // If firstName is not present in body reject the request by
+    // If name is not present in body reject the request by
     // sending the appropriate http code
     return res.status(400).send({
       message: 'name can not be empty'
@@ -61,11 +61,11 @@ router.put('/', (req, res) => {
   artist
     .save()
     .then(data => {
-      // we wait for insertion to be complete and we send the newly user integrated
+      // we wait for insertion to be complete and we send the newly artist integrated
       res.send(data);
     })
     .catch(err => {
-      // In case of error during insertion of a new user in database we send an
+      // In case of error during insertion of a new artist in database we send an
       // appropriate message
       res.status(500).send({
         message: err.message || 'Some error occurred while creating the Artist.'
@@ -96,11 +96,11 @@ router.delete('/:id', (req, res) => {
     });
 });
 
-/* UPDATE user. */
+/* UPDATE artist. */
 router.post('/:id', (req, res) => {
   
 
-  // Find user and update it with the request body
+  // Find artist and update it with the request body
   Artist.findById(req.params.id)
     .exec(function(err, artist) {
       if (err) {
