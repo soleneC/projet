@@ -90,8 +90,7 @@ export default class Widget6 extends Component {
           };
 
 
-          const series = [40
-          ];
+          const series = [40];
 
 
           return (
@@ -105,7 +104,13 @@ export default class Widget6 extends Component {
 
           }
           sync() {
-            axios.get("http://localhost:8000/artists/")
-            .then((rep) => this.setState({ artists: rep.data }));
+            axios.get("http://localhost:8000/tracks/",{
+
+            params: {
+            likes: {$gte :10000}
+             }})
+
+             
+            .then((rep) => this.setState({ tracks: rep.data }));
           }
         }
