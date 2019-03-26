@@ -98,40 +98,35 @@ router.delete('/:id', (req, res) => {
 
 /* UPDATE user. */
 router.post('/:id', (req, res) => {
-  // Validate Request
-  if (!req.body.name) {
-    return res.status(400).send({
-      message: 'name can not be empty'
-    });
-  }
+  
 
   // Find user and update it with the request body
-  Artist.findByIdAndUpdate(
-    req.params.id,
-    {
-      name: req.body.name,
-      dateOfBirth: req.body.dateOfBirth || null,
-      followers : req.body.followers
-    },
-    { new: true }
-  )
-    .then(artist => {
-      if (!artist) {
-        return res.status(404).send({
-          message: 'Artist not found with id ' + req.params.id
+  Artist.findById(req.params.id)
+    .exec(function(err, artist) {
+      if (err) {
+        if (err.kind === 'ObjectId') {
+          return res.status(404).send({
+            message: 'Artist not found with id ' + req.params.id
+          });
+        }
+        return res.status(500).send({
+          message: 'Error updating artist with id ' + req.params.id
         });
       }
-      res.send(artist);
-    })
-    .catch(err => {
-      if (err.kind === 'ObjectId') {
-        return res.status(404).send({
-          message: 'Artist not found with id ' + req.params.id
-        });
-      }
-      return res.status(500).send({
-        message: 'Error updating artist with id ' + req.params.id
-      });
+
+      if (req.body.name) artist.name = req.body.name;
+      if (req.body.dateOfBirth) artist.dateOfBirth = req.body.dateOfBirth;
+      if (req.body.followers) artist.followers = req.body.followers;
+
+      artist.save(function(err, artist) {
+        if (err) {
+          return res.status(500).send({
+            message: 'Error updating artist with id ' + req.params.id
+          });
+        }
+
+        res.json(artist);
+      })
     });
 });
 
