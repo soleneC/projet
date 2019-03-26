@@ -48,7 +48,7 @@ export default class Widget3 extends Component {
 
 
           title: {
-            text: 'Widget numéro 3',
+            text: 'Nombre d\'albums réalisés par an',
             align: 'left',
             style: {
               fontSize: "16px",

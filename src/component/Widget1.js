@@ -27,7 +27,7 @@ export default class Widget1 extends Component {
       plotOptions: {
         bar: {
           horizontal: true,
-        }
+        },
       },
 
       fill:{
@@ -35,7 +35,7 @@ export default class Widget1 extends Component {
       },
 
       title: {
-        text: 'Nombre total de likes par artiste',
+        text: 'Nombre de followers par artiste',
         align: 'center',
         margin: 10,
         offsetX: 0,
@@ -66,15 +66,32 @@ export default class Widget1 extends Component {
       },
       yaxis: {
         labels: {
+          show: true,
           style: {
             colors: ['#919DC4', '#919DC4','#919DC4','#919DC4','#919DC4','#919DC4','#919DC4','#919DC4','#919DC4','#919DC4'],
             fontSize: '12px',
           },
         },
       },
+      responsive: [{
+        breakpoint: 1000,
+        options: {
+          plotOptions: {
+            bar: {
+              horizontal: false,
+            }
+          },
+          dataLabels: {
+            enabled: true,
+            colors: ['#919DC4'],
+          },
+
+        },
+      }]
     };
     const series = [
       {
+        name: "Followers",
         data: artists.map((a) => a.followers)
       },
     ];

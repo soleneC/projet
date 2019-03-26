@@ -35,7 +35,7 @@ export default class Widget2 extends Component {
     return (
 
       <div className="taille">
-      <div className="titre">Widget numéro 2</div>
+      <div className="titre">Total des genres de musique écoutés</div>
       <RadarChart cx={190} cy={125} outerRadius={75} width={500} height={250} data={data}>
         <PolarGrid />
         <PolarAngleAxis dataKey="subject" stroke="#3F9EF9" />

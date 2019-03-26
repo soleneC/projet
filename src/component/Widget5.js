@@ -11,7 +11,7 @@ constructor(props) {
         this.state = {
           options: {
             theme: {
-            palette: 'palette10', 
+            palette: 'palette10',
            monochrome: {
             enabled: true,
              color: '#3F9EF9',
@@ -21,12 +21,12 @@ constructor(props) {
             },
 
             title:{
-              text: 'Nombre découtes de chansons',
+              text: 'Pourcentage d\'écoutes par chanson pour un album',
                align: 'center',
                style: {
             fontSize:  '16px',
                color:  '#fff'
-           
+
         },
             },
 
@@ -37,13 +37,13 @@ constructor(props) {
           plotOptions: {
             radialBar: {
 
-            
+
 
 
               dataLabels: {
                 name: {
           offsetY: -10,
-          
+
           fontSize: "25px"
         },
         value: {
@@ -51,7 +51,7 @@ constructor(props) {
           fontSize: "15px",
           show: true
         },
-                 
+
                 total: {
                   show: true,
                   label: 'Total',
@@ -72,12 +72,12 @@ constructor(props) {
 
       render() {
         return (
-          
+
 
           <div id="chart">
             <Chart options={this.state.options} series={this.state.series} type="radialBar" height="300" />
           </div>
-      
+
     );
   }
 }

@@ -36,7 +36,7 @@ constructor(props) {
             },
 
             title: {
-               text: 'Nombre de followers',
+               text: 'Nombre d\'albums par artiste',
                align: 'center',
 
                floating: false,

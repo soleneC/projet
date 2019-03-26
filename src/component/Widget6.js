@@ -14,14 +14,14 @@ constructor(props) {
           options: {
 
             title:{
-              text: 'widget numéro 6',
+              text: 'Pourcentage de musiques ayant plus de 10 000 likes',
                align: 'center',
                style: {
             fontSize:  '16px',
                color:  '#fff'
-           
+
         },
-            }, 
+            },
             plotOptions: {
               radialBar: {
                 startAngle: -90,
@@ -48,7 +48,7 @@ constructor(props) {
                     color: "#fff",
           fontSize: "25px",
           show: true
-                    
+
                   }
                 }
               }
@@ -73,12 +73,12 @@ constructor(props) {
 
       render() {
         return (
-          
+
 
           <div id="chart">
             <Chart options={this.state.options} series={this.state.series} type="radialBar" height="300" />
           </div>
-      
+
     );
   }
 }
