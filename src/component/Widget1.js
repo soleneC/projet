@@ -2,90 +2,92 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import Chart from 'react-apexcharts';
 import './Widget.css';
+import axios from 'axios';
 
 //source
 //https://apexcharts.com/react-chart-demos/bar-charts/basic/
 
 export default class Widget1 extends Component {
+  constructor(props) {
+    super(props);
 
-       constructor(props) {
-        super(props);
+    this.state = {
+      artists: [],
+    }
+  }
 
-        this.state = {
-          options: {
+  componentDidMount() {
+    this.sync();
+  }
 
-            plotOptions: {
-              bar: {
-                horizontal: true,
-              }
-            },
+  render() {
+    const { artists } = this.state;
 
-            fill:{
-              colors:['#3F73CB']
-            },
+    const options = {
+      plotOptions: {
+        bar: {
+          horizontal: true,
+        }
+      },
 
-            title: {
-               text: 'Nombre total de likes par artiste',
-               align: 'center',
-               margin: 10,
-               offsetX: 0,
-               offsetY: 0,
-               floating: false,
-              style: {
-               fontSize:  '16px',
-               color:  '#fff'
-                 },
-             },
+      fill:{
+        colors:['#3F73CB']
+      },
 
-            dataLabels: {
+      title: {
+        text: 'Nombre total de likes par artiste',
+        align: 'center',
+        margin: 10,
+        offsetX: 0,
+        offsetY: 0,
+        floating: false,
+        style: {
+          fontSize:  '16px',
+          color:  '#fff'
+        },
+      },
 
-              enabled: false,
-              colors:'#919DC4'
+      dataLabels: {
+        enabled: false,
+        colors:'#919DC4'
+      },
 
+      xaxis: {
+        categories: artists.map((a) => a.name),
+        colors: ['#919DC4'],
 
-            },
-            xaxis: {
-
-              categories: ['Australia', 'Canada', 'United Kingdom', 'Netherlands', 'Italy', 'France', 'Japan',
-                'United States', 'China', 'Germany'
-              ],
-              colors:['#919DC4'],
-
-              labels: {
-            show: true,
-
-
-            style: {
-                colors: '#919DC4',
-                fontSize: '12px',
-
-            },
-          },
-            },
-            yaxis: {
-              labels: {
-                style: {
-                colors: ['#919DC4', '#919DC4','#919DC4','#919DC4','#919DC4','#919DC4','#919DC4','#919DC4','#919DC4','#919DC4'],
-                fontSize: '12px',
-            },
-              },
+        labels: {
+          show: true,
+          style: {
+            colors: '#919DC4',
+            fontSize: '12px',
           },
         },
+      },
+      yaxis: {
+        labels: {
+          style: {
+            colors: ['#919DC4', '#919DC4','#919DC4','#919DC4','#919DC4','#919DC4','#919DC4','#919DC4','#919DC4','#919DC4'],
+            fontSize: '12px',
+          },
+        },
+      },
+    };
+    const series = [
+      {
+        data: artists.map((a) => a.followers)
+      },
+    ];
 
-          series:
-          [{
-            data: [200, 300, 450, 500, 550, 600, 700, 1100, 1200, 1380]
-          }],
-        }
-      }
-
-      render() {
-        return (
-
-
-          <div id="chart">
-            <Chart options={this.state.options} series={this.state.series} type="bar" height="350" />
-          </div>
+    return (
+      <div id="chart">
+        <Chart options={options} series={series} type="bar" height="350" />
+      </div>
     );
+  }
+
+  sync() {
+    axios.get("http://localhost:8000/artists/")
+      .then((rep) => this.setState({ artists: rep.data }));
   }
 }

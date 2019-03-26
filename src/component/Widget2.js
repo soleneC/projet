@@ -29,13 +29,13 @@ const data = [
 ];
 
 export default class Widget2 extends Component {
-  
+
 
   render() {
     return (
-     
-      <div class="taille">
-      <div class="titre">Widget numéro 2</div>
+
+      <div className="taille">
+      <div className="titre">Widget numéro 2</div>
       <RadarChart cx={190} cy={125} outerRadius={75} width={500} height={250} data={data}>
         <PolarGrid />
         <PolarAngleAxis dataKey="subject" stroke="#3F9EF9" />
@@ -43,7 +43,7 @@ export default class Widget2 extends Component {
         <Radar name="Mike" dataKey="A" stroke="#3F9EF9" fill="#3F73CB" fillOpacity={0.6} />
       </RadarChart>
       </div>
-      
+
     );
   }
 }

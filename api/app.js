@@ -3,15 +3,16 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+var cors = require("cors");
 
 mongoose.connect('mongodb://localhost:27017/DB');
 var db = mongoose.connection;
 
 
-db.on('error', console.error.bind(console, 'Erreur lors de la connexion')); 
+db.on('error', console.error.bind(console, 'Erreur lors de la connexion'));
 db.once('open', function (){
-    console.log("Connexion à la base OK"); 
-}); 
+    console.log("Connexion à la base OK");
+});
 
 
 var indexRouter = require('./routes/index');
@@ -22,9 +23,8 @@ var tracksRouter = require('./routes/tracks');
 
 var app = express();
 
-
-
 app.use(logger('dev'));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());

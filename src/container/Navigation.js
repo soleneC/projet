@@ -28,15 +28,15 @@ class Navigation extends Component {
 
   render() {
     return (
-      <header class="barre">
+      <header className="barre">
       <div>
-       <Navbar light expand="md">
+       <Navbar dark expand="md">
           <NavbarBrand style={{color: '#919DC4'}} href="/">My Dashboard</NavbarBrand>
           <NavbarToggler  onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink class = "home" style={{color: '#919DC4'}} to="/">Home</NavLink>
+                <NavLink className="home" style={{color: '#919DC4'}} to="/">Home</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink style={{color: '#919DC4'}} to="/admin">Page Admin</NavLink>
