@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/artists', artistsRouter);
-//app.use('/albums', albumsRouter);
+app.use('/albums', albumsRouter);
 app.use('/tracks', tracksRouter);
 
 const PORT = process.env.PORT || 8000;

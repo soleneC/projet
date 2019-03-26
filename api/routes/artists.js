@@ -54,7 +54,8 @@ router.put('/', (req, res) => {
   const artist = new Artist({
     name: req.body.name,
     dateOfBirth: req.body.dateOfBirth || null,
-    followers: req.body.followers || null
+    followers: req.body.followers || null,
+    albums : req.body.albums || null
   });
 
   // Save Artist in the database
@@ -117,6 +118,7 @@ router.post('/:id', (req, res) => {
       if (req.body.name) artist.name = req.body.name;
       if (req.body.dateOfBirth) artist.dateOfBirth = req.body.dateOfBirth;
       if (req.body.followers) artist.followers = req.body.followers;
+      if (req.body.albums) artist.albums = req.body.albums;
 
       artist.save(function(err, artist) {
         if (err) {

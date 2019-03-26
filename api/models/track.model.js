@@ -5,10 +5,11 @@ const TrackSchema = new mongoose.Schema({
      duration : Number,
      listennings : Number,
      likes : Number,
-    /* artist:{
+     
+     artist:{
      	type:mongoose.Schema.Types.ObjectId,
      	ref:'Artist'
-     }*/
+     }
 	});
 
 module.exports = mongoose.model('Track', TrackSchema, 'Track');

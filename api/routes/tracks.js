@@ -55,7 +55,8 @@ router.put('/', (req, res) => {
     title: req.body.title,
     duration: req.body.duration || null,
     listennings: req.body.listennings || null,
-    likes: req.body.likes || null
+    likes: req.body.likes || null,
+    artist: req.body.artist || null
   });
 
   // Save Track in the database
@@ -119,6 +120,7 @@ router.post('/:id', (req, res) => {
       if (req.body.duration) track.duration = req.body.duration;
       if (req.body.listennings) track.listennings = req.body.listennings;
       if (req.body.likes) track.likes = req.body.likes;
+      if (req.body.artist) track.artist = req.body.artist;
 
       track.save(function(err, track) {
         if (err) {
