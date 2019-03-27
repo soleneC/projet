@@ -29,7 +29,7 @@ export default class Widget3 extends Component {
 
     for (let i = 0; i < 10; ++i) {
       const an = ajd - i;
-      ans.push(an.toString());
+      ans.push(`01/01/${an}`);
 
       let nb = 0;
       albums.forEach(a => {
@@ -108,7 +108,7 @@ export default class Widget3 extends Component {
 
       yaxis: {
         min: 0,
-        max: 20,
+        max: 10,
         colors:['#3F9EF9','#3F9EF9','#3F9EF9','#3F9EF9'],
         title: {
           text: 'Albums',
