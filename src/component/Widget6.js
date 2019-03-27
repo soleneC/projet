@@ -24,7 +24,7 @@ export default class Widget6 extends Component {
   render() {
 
 
-   const { artists } = this.state;
+   const { tracks } = this.state;
 
 
    const options = {
@@ -90,7 +90,7 @@ export default class Widget6 extends Component {
           };
 
 
-          const series = [40];
+          const series = [tracks];
 
 
           return (
@@ -104,13 +104,7 @@ export default class Widget6 extends Component {
 
           }
           sync() {
-            axios.get("http://localhost:8000/tracks/",{
-
-            params: {
-            likes: {$gte :10000}
-             }})
-
-             
+            axios.get("http://localhost:8000/tracks/likesup")
             .then((rep) => this.setState({ tracks: rep.data }));
           }
         }
