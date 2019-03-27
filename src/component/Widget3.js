@@ -23,6 +23,24 @@ export default class Widget3 extends Component {
   render() {
     const { albums } = this.state;
 
+    const ans = [];
+    const nbs = [];
+    const ajd = (new Date()).getFullYear();
+
+    for (let i = 0; i < 10; ++i) {
+      const an = ajd - i;
+      ans.push(an.toString());
+
+      let nb = 0;
+      albums.forEach(a => {
+        if (new Date(a.release).getFullYear() === an) {
+          nb++;
+        }
+      });
+
+      nbs.push(nb);
+    }
+
     const options = {
       chart: {
         type: 'line',
@@ -43,7 +61,7 @@ export default class Widget3 extends Component {
 
       xaxis: {
         type: 'datetime',
-        categories: albums.map((al) => al.release),
+        categories: ans,
 
         labels: {
           show: true,
@@ -89,8 +107,8 @@ export default class Widget3 extends Component {
       },
 
       yaxis: {
-        min: -10,
-        max: 40,
+        min: 0,
+        max: 20,
         colors:['#3F9EF9','#3F9EF9','#3F9EF9','#3F9EF9'],
         title: {
           text: 'Albums',
@@ -114,14 +132,11 @@ export default class Widget3 extends Component {
         }
       };
 
-      const numAlbums = albums.map((al) => al.estimatedDocumentCount());
-
       const series = [{
         name: 'Albums',
-        data: numAlbums
+        data: nbs
 
-      },
-    ];
+      }];
 
     return (
       <div id="chart">

@@ -53,7 +53,7 @@ router.put('/', (req, res) => {
   // Create a new Album
   const album = new Album({
     title: req.body.title,
-    realease: req.body.release || null,
+    release: req.body.release || null,
     genre: req.body.genre || null,
     cover_url: req.body.cover_url || null,
     tracks: req.body.tracks || null
@@ -100,7 +100,7 @@ router.delete('/:id', (req, res) => {
 
 /* UPDATE album. */
 router.post('/:id', (req, res) => {
-  
+
 
   // Find album and update it with the request body
   Album.findById(req.params.id)
