@@ -16,6 +16,29 @@ router.get('/', (req, res) => {
     });
 });
 
+/* GET tracks with likes >=10 000. */
+router.get('/likesup', (req, res) => {
+
+  Track.countDocuments({likes: { $gte: 10000 }})
+    .then(function (countTL) {
+      	Track.countDocuments()
+	      	.then(function (countTotal) {
+		      	var pourcent = (countTL/countTotal)*100;
+		      	res.json(pourcent);
+	      	})
+	      	.catch(err2 => {
+		      	res.status(500).send({
+		        	message: err.message || 'Some error occurred while calculating.'
+		      	});
+    		});
+    })
+    .catch(err => {
+      	res.status(500).send({
+        	message: err.message || 'Some error occurred while retrieving tracks.'
+      	});
+    });
+});
+
 /* GET one Track. */
 router.get('/:id', (req, res) => {
   Track.findById(req.params.id)
