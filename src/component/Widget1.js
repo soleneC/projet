@@ -105,6 +105,11 @@ export default class Widget1 extends Component {
 
   sync() {
     axios.get("http://localhost:8000/artists/")
-      .then((rep) => this.setState({ artists: rep.data }));
+      .then((rep) => this.setState({ artists: rep.data }))
+
+      .catch((err)=>{
+		      console.error(err);
+          this.status(500).send({"errorServer": err})
+	       });
   }
 }
