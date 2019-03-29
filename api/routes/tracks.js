@@ -123,7 +123,7 @@ router.delete('/:id', (req, res) => {
 
 /* UPDATE track. */
 router.post('/:id', (req, res) => {
-  
+
 
   // Find track and update it with the request body
   Track.findById(req.params.id)
