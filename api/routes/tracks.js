@@ -77,7 +77,7 @@ router.put('/', (req, res) => {
   const track = new Track({
     title: req.body.title,
     duration: req.body.duration || null,
-    listennings: req.body.listennings || null,
+    listenings: req.body.listenings || null,
     likes: req.body.likes || null,
     artist: req.body.artist || null
   });
@@ -141,7 +141,7 @@ router.post('/:id', (req, res) => {
 
       if (req.body.title) track.title = req.body.title;
       if (req.body.duration) track.duration = req.body.duration;
-      if (req.body.listennings) track.listennings = req.body.listennings;
+      if (req.body.listenings) track.listenings = req.body.listenings;
       if (req.body.likes) track.likes = req.body.likes;
       if (req.body.artist) track.artist = req.body.artist;
 

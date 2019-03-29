@@ -26,10 +26,10 @@ export default class Widget5 extends Component {
     let e = 0;
     let ecoute = 0;
 
-    const tot = tracks.reduce((tot, tracks) => tot + tracks.listennings, 0);
+    const tot = tracks.reduce((tot, tracks) => tot + tracks.listenings, 0);
 
     tracks.forEach(t => {
-      e = (t.listennings/tot)*100;
+      e = (t.listenings/tot)*100;
       ecoute = Math.round(e*100)/100;
       titres.push(t.title);
       ecoutes.push(ecoute);
