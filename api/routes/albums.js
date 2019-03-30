@@ -16,6 +16,8 @@ router.get('/', (req, res) => {
     });
 });
 
+
+
 /* GET one Album. */
 router.get('/:id', (req, res) => {
   Album.findById(req.params.id)

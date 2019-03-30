@@ -16,6 +16,25 @@ router.get('/', (req, res) => {
     });
 });
 
+/* GET nombre d'artistes nés le même mois. */
+router.get('/Artistsbirth', (req, res) => {
+  Artist.aggregate([
+      {
+        $group: {
+          _id:{
+            $month:"$dateOfBirth"
+          },
+        count : {
+          $sum: 1       
+      }
+    }
+  }
+      
+  ]).then (resultats => {
+      res.send(resultats);
+    });
+});
+
 /* GET one Artist. */
 router.get('/:id', (req, res) => {
   Artist.findById(req.params.id)
