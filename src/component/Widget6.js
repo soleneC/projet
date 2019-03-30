@@ -90,7 +90,7 @@ export default class Widget6 extends Component {
           };
 
 
-          const series = [tracks];
+          const series = [Math.round(tracks*100)/100];
 
 
           return (
