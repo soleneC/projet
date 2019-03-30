@@ -9,7 +9,6 @@ import axios from 'axios';
 //http://recharts.org/en-US/examples/SimpleRadarChart
 
 
-
 export default class Widget2 extends Component {
   constructor(props) {
     super(props);
