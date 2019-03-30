@@ -69,10 +69,16 @@ router.put('/', (req, res) => {
     });
   }
 
+  if (!req.body.dateOfBirth) {
+    return res.status(400).send({
+      message: 'date of birth can not be empty'
+    });
+  }
+
   // Create a new Artist
   const artist = new Artist({
     name: req.body.name,
-    dateOfBirth: req.body.dateOfBirth || null,
+    dateOfBirth: req.body.dateOfBirth,
     followers: req.body.followers || null,
     albums : req.body.albums || null
   });

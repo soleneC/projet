@@ -16,7 +16,22 @@ router.get('/', (req, res) => {
     });
 });
 
-
+/* GET nombre d'albums par genre. */
+router.get('/AlbumGenre', (req, res) => {
+  Album.aggregate([
+      {
+        $group: {
+          _id:"$genre",
+        count : {
+          $sum: 1       
+      }
+    }
+  }
+      
+  ]).then (resultats => {
+      res.send(resultats);
+    });
+});
 
 /* GET one Album. */
 router.get('/:id', (req, res) => {
@@ -52,11 +67,23 @@ router.put('/', (req, res) => {
     });
   }
 
+  if (!req.body.release) {
+    return res.status(400).send({
+      message: 'date of release cannot be empty'
+    });
+  }
+
+  if (!req.body.genre) {
+    return res.status(400).send({
+      message: 'genre cannot be empty'
+    });
+  }
+
   // Create a new Album
   const album = new Album({
     title: req.body.title,
-    release: req.body.release || null,
-    genre: req.body.genre || null,
+    release: req.body.release,
+    genre: req.body.genre,
     cover_url: req.body.cover_url || null,
     tracks: req.body.tracks || null
   });
