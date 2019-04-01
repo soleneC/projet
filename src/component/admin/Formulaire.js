@@ -7,26 +7,29 @@ class Formulaire extends Component {
     return (
       <Form>
         <FormGroup row>
-          <Label for="surname" sm={2}>Nom</Label>
+          <Label for="name" sm={2} class = "label">Name</Label>
           <Col sm={10}>
-            <Input type="text" name="surname" id="surname" placeholder="Nom" />
+            <Input type="text" name="name" id="name" placeholder="Name" />
           </Col>
         </FormGroup>
+
         <FormGroup row>
-          <Label for="name" sm={2} class = "label">Prénom</Label>
+          <Label for="birthday" sm={2} class = "label">Birthday</Label>
           <Col sm={10}>
-            <Input type="text" name="name" id="name" placeholder="Prénom" />
+            <Input type="date" name="birthday" id="birthday" placeholder="Birthday" />
           </Col>
         </FormGroup>
+
         <FormGroup row>
-          <Label for="exampleText" sm={2}>Commentaire</Label>
+          <Label for="followers" sm={2} class = "label">Followers</Label>
           <Col sm={10}>
-            <Input type="textarea" name="text" id="exampleText" />
+            <Input type="number" name="followers" id="followers" placeholder="Followers" />
           </Col>
         </FormGroup>
+
         <FormGroup check row>
           <Col sm={{ size: 10, offset: 2 }}>
-            <Button>Envoyer</Button>
+            <Button>ADD</Button>
           </Col>
         </FormGroup>
       </Form>

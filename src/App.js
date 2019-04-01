@@ -14,7 +14,7 @@ class App extends Component {
       <BrowserRouter className="App">
         <div>
           <Navigation />
-          
+
           <Switch>
             <Route path = "/" component = {WidgetGrid} exact />
             <Route path = "/admin" component = {Admin} />
