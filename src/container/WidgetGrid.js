@@ -13,7 +13,7 @@ import './WidgetGrid.css';
 export default class WidgetGrid extends Component {
   render() {
     return (
-    	<Row>
+    	<Row className="widget_grid">
       	<Col xs="12" sm="6">
         	<div className="w">
         	 <Widget1/>

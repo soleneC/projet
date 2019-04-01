@@ -1,3 +1,7 @@
+.widget_grid{
+  overflow-x: hidden;
+}
+
 .w{
 	background-color: #292D39 !important;
     border-radius: 10px;
