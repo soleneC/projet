@@ -12,7 +12,7 @@ class Admin extends Component {
         </Col>
 
           <Col xs="12" sm="6" class = "formulaire">
-            <h2>Add an Artist</h2>
+            <h2>Ajouter un Artiste</h2>
             <div><Formulaire /></div>
           </Col>
         </Row>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Table } from 'reactstrap';
+import { Table, Button, FormGroup, Col } from 'reactstrap';
 import axios from 'axios';
 
 class List_artist extends Component {
@@ -13,6 +13,11 @@ class List_artist extends Component {
   }
 
   componentDidMount() {
+    this.sync();
+  }
+
+  Actualiser(e){
+    e.preventDefault();
     this.sync();
   }
 
@@ -35,6 +40,10 @@ class List_artist extends Component {
     });
 
     return (
+    <div>
+      <Col sm={{ size: 10}}>
+          <Button type="submit" onClick={this.Actualiser.bind(this)} className="btn btn-primary">Actualiser</Button>
+      </Col>
       <Table responsive dark>
         <thead>
           <tr>
@@ -52,6 +61,7 @@ class List_artist extends Component {
 
         </tbody>
       </Table>
+      </div>
     );
   }
 
