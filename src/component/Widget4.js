@@ -148,6 +148,7 @@ export default class Widget4 extends Component {
    legend:{
      position:'bottom',
      offsetY: -10,
+     show: true,
      floating: true,
      
      labels: {
