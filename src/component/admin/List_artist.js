@@ -27,11 +27,7 @@ class List_artist extends Component {
     const names = [];
     const birthdays = [];
     const followers = [];
-    let ids = [];
-    let year;
-    let month;
-    let day;
-    let birthday;
+    let ids = [];  
 
     for (let i = 0; i < artists.length; ++i){
       ids[i] = <tr>{i}</tr>;
@@ -39,13 +35,7 @@ class List_artist extends Component {
 
     artists.forEach(a => {
       names.push(<tr>{a.name}</tr>);
-
-      year = new Date(a.dateOfBirth).getFullYear();
-      month = new Date(a.dateOfBirth).getMonth() +1;
-      day = new Date(a.dateOfBirth).getDate();
-      birthday = `${day}/${month}/${year}`;
-      birthdays.push(<tr>{birthday}</tr>);
-
+      birthdays.push(<tr>{a.dateOfBirth}</tr>);
       followers.push(<tr>{a.followers}</tr>);
     });
 
