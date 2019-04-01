@@ -87,6 +87,9 @@ export default class Widget4 extends Component {
 
     });
 
+
+
+
     const options = {
 
       labels: tousmois,
@@ -103,17 +106,25 @@ export default class Widget4 extends Component {
     },
 
 
-    responsive: [{
+   responsive: [{
       breakpoint: 480,
+
       options: {
 
-        chart: {
-          width: 150
-        },
+        /*chart: {
+          width: 400
+        },*/
+
+        
 
         legend: {
+          show:false,
+          floating:true,
+          offsetY: -20,
+          position: 'right',
+          
 
-          position: 'bottom'
+           
         },
       }
     }],
@@ -124,7 +135,8 @@ export default class Widget4 extends Component {
      text: 'Nombre d\'artistes par mois de naissance',
      align: 'center',
 
-     floating: false,
+    
+
      style: {
        fontSize: '16px',
        color:  '#fff'
@@ -137,6 +149,7 @@ export default class Widget4 extends Component {
      position:'bottom',
      offsetY: -10,
      floating: true,
+     
      labels: {
       colors: '#919DC4',
       useSeriesColors: false

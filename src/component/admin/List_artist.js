@@ -24,20 +24,19 @@ class List_artist extends Component {
   render() {
     const { artists } = this.state;
 
-    const names = [];
-    const birthdays = [];
-    const followers = [];
-    let ids = [];  
 
-    for (let i = 0; i < artists.length; ++i){
-      ids[i] = <tr>{i}</tr>;
+    const liste =[];
+
+    for (let i = 0 ; i< artists.length;i++){
+      liste.push(
+         <tr key={i}>
+            <td> {i}</td>
+            <td> {artists[i].name}</td>
+            <td> { new Date (artists[i].dateOfBirth).toLocaleDateString() }</td>
+            <td> { artists[i].followers} </td>
+         </tr>
+        )
     }
-
-    artists.forEach(a => {
-      names.push(<tr>{a.name}</tr>);
-      birthdays.push(<tr>{a.dateOfBirth}</tr>);
-      followers.push(<tr>{a.followers}</tr>);
-    });
 
     return (
     <div>
@@ -54,10 +53,7 @@ class List_artist extends Component {
           </tr>
         </thead>
         <tbody>
-            <td>{ids}</td>
-            <td>{names}</td>
-            <td>{birthdays}</td>
-            <td>{followers}</td>
+            { liste }
 
         </tbody>
       </Table>
