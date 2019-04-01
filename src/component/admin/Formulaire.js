@@ -39,7 +39,7 @@ class Formulaire extends Component {
       errors["followers"] = "Ne peut être vide";
     }
 
-  
+
     this.setState({errors: errors});
     return formIsValid;
   }
@@ -56,13 +56,13 @@ class Formulaire extends Component {
 
   }
 
-  handleChange(field, e){       
+  handleChange(field, e){
     let fields = this.state.fields;
-    fields[field] = e.target.value;        
+    fields[field] = e.target.value;
     this.setState({fields});
   }
 
-  
+
 
   componentDidMount()
    {
@@ -73,20 +73,20 @@ class Formulaire extends Component {
   return (
     <Form onSubmit= {this.contactSubmit.bind(this)}>
     <FormGroup row>
-    <Label for="name" sm={2} class = "label">Name</Label>
+    <Label for="name" sm={2} class = "label">Nom</Label>
     <Col sm={10}>
-    <Input type="text" ref="name" id="name" placeholder="Name" onChange={this.handleChange.bind(this, "name")} 
+    <Input type="text" ref="name" id="name" placeholder="Nom" onChange={this.handleChange.bind(this, "name")}
     value={this.state.fields["name"]}/>
-     
+
     <span className="error">{this.state.errors["name"]}</span>
-              
+
     </Col>
     </FormGroup>
 
     <FormGroup row>
-    <Label for="birthday" sm={2} class = "label">Birthday</Label>
+    <Label for="birthday" sm={2} class = "label">Naissance</Label>
     <Col sm={10}>
-    <Input type="date" ref="birthday" id="birthday" placeholder="Birthday" onChange={this.handleChange.bind(this, "birthday")} 
+    <Input type="date" ref="birthday" id="birthday" placeholder="Naissance" onChange={this.handleChange.bind(this, "birthday")} 
     value={this.state.fields["birthday"]}/>
     <span className="error">{this.state.errors["birthday"]}</span>
     </Col>
@@ -95,7 +95,7 @@ class Formulaire extends Component {
     <FormGroup row>
     <Label for="followers" sm={2} class = "label">Followers</Label>
     <Col sm={10}>
-    <Input type="number" ref="followers" id="followers" placeholder="Followers"  onChange={this.handleChange.bind(this, "followers")} 
+    <Input type="number" ref="followers" id="followers" placeholder="Followers"  onChange={this.handleChange.bind(this, "followers")}
     value={this.state.fields["followers"]}/>
     <span className="error">{this.state.errors["followers"]}</span>
     </Col>
@@ -114,11 +114,11 @@ class Formulaire extends Component {
 
          axios.put("http://localhost:8000/artists", {
 
-    
+
       name: this.state.fields.name,
       dateOfBirth: this.state.fields.birthday,
       followers: this.state.fields.followers
-   
+
 
         })
 

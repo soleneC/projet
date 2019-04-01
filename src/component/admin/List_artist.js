@@ -46,9 +46,9 @@ class List_artist extends Component {
       <Table responsive dark>
         <thead>
           <tr>
-            <th>Artists</th>
-            <th>Name</th>
-            <th>Birthday</th>
+            <th>Artiste</th>
+            <th>Nom</th>
+            <th>Naissance</th>
             <th>Followers</th>
           </tr>
         </thead>
