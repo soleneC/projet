@@ -72,14 +72,33 @@ router.put('/', (req, res) => {
       message: 'title can not be empty'
     });
   }
+  
+  if (!req.body.listenings) {
+    // If title is not present in body reject the request by
+    // sending the appropriate http code
+    return res.status(400).send({
+      message: 'listenings can not be empty'
+    });
+  }
+
+  if (!req.body.likes) {
+    // If title is not present in body reject the request by
+    // sending the appropriate http code
+    return res.status(400).send({
+      message: 'likes can not be empty'
+    });
+  }
+
+
+
 
 
   // Create a new Track
   const track = new Track({
     title: req.body.title,
     duration: req.body.duration || null,
-    listenings: req.body.listenings || null,
-    likes: req.body.likes || null,
+    listenings: req.body.listenings,
+    likes: req.body.likes,
     artist: req.body.artist || null
   });
 
