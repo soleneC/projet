@@ -5,7 +5,7 @@ import axios from 'axios';
 
 
 
-class Formulaire extends Component {
+class Formulaire_artist extends Component {
 
   constructor (props) {
     super(props);
@@ -126,4 +126,4 @@ class Formulaire extends Component {
     }
 
 
-    export default Formulaire;
+    export default Formulaire_artist;
