@@ -49,7 +49,7 @@ class List_tracks extends Component {
           <tr>
             <th>Musiques</th>
             <th>Titre</th>
-            <th>Durée</th>
+            <th>Durée (en s)</th>
             <th>Ecoutes</th>
             <th>Likes</th>
           </tr>

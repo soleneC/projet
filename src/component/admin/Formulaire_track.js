@@ -82,7 +82,7 @@ class Formulaire_track extends Component {
     </FormGroup>
 
     <FormGroup row>
-    <Label for="duration" sm={2} class = "label">Durée en secondes</Label>
+    <Label for="duration" sm={2} class = "label">Durée</Label>
     <Col sm={10}>
     <Input type="number" ref="duration" id="duration" placeholder="Durée en secondes" onChange={this.handleChange.bind(this, "duration")}
     value={this.state.fields["duration"]}/>
