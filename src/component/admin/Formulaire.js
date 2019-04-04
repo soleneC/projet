@@ -5,7 +5,7 @@ import axios from 'axios';
 
 
 
-class Formulaire_artist extends Component {
+class Formulaire extends Component {
 
   constructor (props) {
     super(props);
@@ -86,7 +86,7 @@ class Formulaire_artist extends Component {
     <FormGroup row>
     <Label for="birthday" sm={2} class = "label">Naissance</Label>
     <Col sm={10}>
-    <Input type="date" ref="birthday" id="birthday" placeholder="Naissance" onChange={this.handleChange.bind(this, "birthday")}
+    <Input type="date" ref="birthday" id="birthday" placeholder="Naissance" onChange={this.handleChange.bind(this, "birthday")} 
     value={this.state.fields["birthday"]}/>
     <span className="error">{this.state.errors["birthday"]}</span>
     </Col>
@@ -126,4 +126,4 @@ class Formulaire_artist extends Component {
     }
 
 
-    export default Formulaire_artist;
+    export default Formulaire;
