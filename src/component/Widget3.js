@@ -129,7 +129,22 @@ export default class Widget3 extends Component {
               cssClass: 'apexcharts-yaxis-label',
             },
           },
-        }
+        },
+
+        responsive: [{
+          breakpoint: 500,
+          options: {
+            title: {
+              text: 'Nombre d\'albums réalisés par an dans le monde',
+              align: 'left',
+              style: {
+                fontSize: "12px",
+                color: '#fff'
+              }
+            }
+
+          },
+        }]
       };
 
       const series = [{

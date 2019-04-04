@@ -87,6 +87,21 @@ export default class Widget6 extends Component {
 
               labels: ['Average Results'],
             },
+            responsive: [{
+              breakpoint: 500,
+              options: {
+                title: {
+                  text: 'Pourcentage de musiques ayant plus de 10 000 likes',
+                  align: 'center',
+                  style: {
+                    fontSize: '12px',
+                    color:  '#fff'
+
+                  }
+                }
+
+              },
+            }]
           };
 
 

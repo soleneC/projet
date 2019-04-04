@@ -47,7 +47,7 @@ export default class Widget5 extends Component {
       },
 
       title:{
-        text: 'Pourcentage d\'écoutes par chanson au total',
+        text: 'Pourcentage d\'écoutes par chanson',
         align: 'center',
         style: {
           fontSize:  '16px',
