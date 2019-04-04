@@ -47,7 +47,7 @@ class List_tracks extends Component {
       <Table responsive dark>
         <thead>
           <tr>
-            <th>Track</th>
+            <th>Musiques</th>
             <th>Titre</th>
             <th>Durée</th>
             <th>Ecoutes</th>

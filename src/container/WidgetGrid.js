@@ -5,6 +5,7 @@ import Widget3 from '../component/Widget3';
 import Widget4 from '../component/Widget4';
 import Widget5 from '../component/Widget5';
 import Widget6 from '../component/Widget6';
+import Widget7 from '../component/Widget7';
 
 import { Container, Row, Col } from 'reactstrap';
 import './WidgetGrid.css';
@@ -32,19 +33,25 @@ export default class WidgetGrid extends Component {
           </div>
       	</Col>
 
-      	<Col xs="12" sm="4">
+      	<Col xs="12" sm="7">
         	<div className="w">
         	 <Widget4/>
           </div>
       	</Col>
 
-      	<Col xs="12" sm="4">
+      	<Col xs="12" sm="5">
         	<div className="w">
         	 <Widget5/>
           </div>
       	</Col>
 
-      	<Col xs="12" sm="4">
+        <Col xs="12" sm="5">
+      	 <div className="w">
+      	   <Widget7/>
+          </div>
+      	</Col>
+
+        <Col xs="12" sm="7">
       	 <div className="w">
       	   <Widget6/>
           </div>

@@ -4,10 +4,8 @@ import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap
 import axios from 'axios';
 import './Formulaire.css';
 
-
-
 class Formulaire_album extends Component {
-  
+
 
   constructor (props) {
     super(props);
@@ -70,9 +68,9 @@ class Formulaire_album extends Component {
   return (
     <Form onSubmit= {this.contactSubmit.bind(this)}>
         <FormGroup row>
-            <Label for="title" sm={2} class = "label">Title</Label>
+            <Label for="title" sm={2} class = "label">Titre</Label>
                <Col sm={10}>
-                   <Input type="text" ref="title" id="title" placeholder="Title" onChange={this.handleChange.bind(this, "title")}
+                   <Input type="text" ref="title" id="title" placeholder="Titre" onChange={this.handleChange.bind(this, "title")}
                     value={this.state.fields["title"]}/>
 
                     <span className="error">{this.state.errors["title"]}</span>
@@ -83,7 +81,7 @@ class Formulaire_album extends Component {
        <FormGroup row>
           <Label for="genre" sm={2} class = "label">Genre</Label>
               <Col sm={10}>
-                    
+
                   <Input type="select" ref="genre" name="genre" id="genre" onChange={this.handleChange.bind(this, "genre")}
                     value={this.state.fields["genre"]}>
                      <option>Pop</option>
@@ -94,23 +92,23 @@ class Formulaire_album extends Component {
                      <option>Soul</option>
                      <option>Jazz</option>
                  </Input>
-        
+
               </Col>
        </FormGroup>
 
         <FormGroup row>
-            <Label for="date" sm={2} class = "label">Release date</Label>
+            <Label for="date" sm={2} class = "label">Date de sortie</Label>
               <Col sm={10}>
-                  <Input type="date" ref="date" id="date" placeholder="date"  onChange={this.handleChange.bind(this, "date")}
+                  <Input type="date" ref="date" id="date" placeholder="Date de sortie"  onChange={this.handleChange.bind(this, "date")}
                   value={this.state.fields["date"]}/>
                   <span className="error">{this.state.errors["date"]}</span>
                </Col>
          </FormGroup>
 
          <FormGroup row>
-            <Label for="cover_url" sm={2} class = "label">Cover Url</Label>
+            <Label for="cover_url" sm={2} class = "label">Photo de couverture</Label>
                <Col sm={10}>
-                   <Input type="text"  id="url" placeholder="Cover Url" onChange={this.handleChange.bind(this, "cover_url")}
+                   <Input type="text"  id="url" placeholder="http://www.exemple_photo.jpg/" onChange={this.handleChange.bind(this, "cover_url")}
                     value={this.state.fields["cover_url"]}/>
 
                     <span className="error">{this.state.errors["cover_url"]}</span>

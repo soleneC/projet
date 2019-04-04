@@ -52,7 +52,7 @@ class List_albums extends Component {
             <th>Titre</th>
             <th>Genre</th>
             <th>Date de sortie</th>
-            <th>URL cover</th>
+            <th>Photo de couverture</th>
           </tr>
         </thead>
         <tbody>

@@ -3,8 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import axios from 'axios';
 
-
-
 class Formulaire_track extends Component {
 
   constructor (props) {
@@ -73,7 +71,7 @@ class Formulaire_track extends Component {
   return (
     <Form onSubmit= {this.contactSubmit.bind(this)}>
     <FormGroup row>
-    <Label for="title" sm={2} class = "label">Nom</Label>
+    <Label for="title" sm={2} class = "label">Titre</Label>
     <Col sm={10}>
     <Input type="text" ref="title" id="title" placeholder="Titre" onChange={this.handleChange.bind(this, "title")}
     value={this.state.fields["title"]}/>
@@ -84,16 +82,16 @@ class Formulaire_track extends Component {
     </FormGroup>
 
     <FormGroup row>
-    <Label for="duration" sm={2} class = "label">Durée</Label>
+    <Label for="duration" sm={2} class = "label">Durée en secondes</Label>
     <Col sm={10}>
-    <Input type="number" ref="duration" id="duration" placeholder="Durée de la musique" onChange={this.handleChange.bind(this, "duration")} 
+    <Input type="number" ref="duration" id="duration" placeholder="Durée en secondes" onChange={this.handleChange.bind(this, "duration")}
     value={this.state.fields["duration"]}/>
     <span className="error">{this.state.errors["duration"]}</span>
     </Col>
     </FormGroup>
 
     <FormGroup row>
-    <Label for="listenings" sm={2} class = "label">Listenings</Label>
+    <Label for="listenings" sm={2} class = "label">Ecoutes</Label>
     <Col sm={10}>
     <Input type="number" ref="listenings" id="listenings" placeholder="Nombre d'écoutes"  onChange={this.handleChange.bind(this, "listenings")}
     value={this.state.fields["listenings"]}/>
@@ -104,7 +102,7 @@ class Formulaire_track extends Component {
     <FormGroup row>
     <Label for="likes" sm={2} class = "label">Likes</Label>
     <Col sm={10}>
-    <Input type="number" ref="likes" id="likes" placeholder="Nombre d'écoutes"  onChange={this.handleChange.bind(this, "likes")}
+    <Input type="number" ref="likes" id="likes" placeholder="Nombre de likes"  onChange={this.handleChange.bind(this, "likes")}
     value={this.state.fields["likes"]}/>
     <span className="error">{this.state.errors["likes"]}</span>
     </Col>
