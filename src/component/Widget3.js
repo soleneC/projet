@@ -73,7 +73,7 @@ export default class Widget3 extends Component {
       },
 
       title: {
-        text: 'Nombre d\'albums réalisés par an dans le monde',
+        text: 'Nombre d\'albums réalisés par an',
         align: 'left',
         style: {
           fontSize: "16px",
@@ -135,7 +135,7 @@ export default class Widget3 extends Component {
           breakpoint: 500,
           options: {
             title: {
-              text: 'Nombre d\'albums réalisés par an dans le monde',
+              text: 'Nombre d\'albums réalisés par an',
               align: 'left',
               style: {
                 fontSize: "12px",
