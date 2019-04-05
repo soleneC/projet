@@ -10,6 +10,7 @@ import Widget3 from '../src/component/Widget3';
 import Widget4 from '../src/component/Widget4';
 import Widget5 from '../src/component/Widget5';
 import Widget6 from '../src/component/Widget6';
+import Widget7 from '../src/component/Widget7';
 
 
 storiesOf('Widgets', module)
@@ -20,3 +21,4 @@ storiesOf('Widgets', module)
   .add('Widget4', () => <Widget4/>)
   .add('Widget5', () => <Widget5/>)
   .add('Widget6', () => <Widget6/>)
+  .add('Widget7', () => <Widget7/>)
