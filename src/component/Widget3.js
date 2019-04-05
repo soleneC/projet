@@ -27,7 +27,7 @@ export default class Widget3 extends Component {
     const nbs = [];
     const ajd = (new Date()).getFullYear();
 
-    for (let i = 0; i < 10; ++i) {
+    for (let i = 0; i < 20; ++i) {
       const an = ajd - i;
       ans.push(`01/01/${an}`);
 
